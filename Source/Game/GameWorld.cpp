@@ -8,7 +8,7 @@
 #include "Game.h"
 #include "C_Object.h"
 #include "NetMessage.h"
-#include "../NetworkLibrary/Serializer.h"
+#include "../../EmberNet/Serializer.h"
 
 C_GameWorld::C_GameWorld()
 {

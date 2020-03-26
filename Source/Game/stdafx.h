@@ -7,7 +7,7 @@
 
 #define NOMINMAX
 #include "targetver.h"
-#include "../NetworkLibrary/CommonNetworkIncludes.h"
+#include "../../EmberNet/CommonNetworkIncludes.h"
 //#include "../TShared/NetworkHelpers.h"
 
 #include <tga2d/drawers/debug_drawer.h>

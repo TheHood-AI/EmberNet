@@ -1,10 +1,10 @@
 #include "pch.h"
 #include "ServerMain.h"
 
-#include "../NetworkLibrary/Serializer.h"
+#include "../../EmberNet/Serializer.h"
 #include "../TShared/NetMessage.h"
-#include "../NetworkLibrary/ConnectionMessage.h"
-#include "../NetworkLibrary/DisconnectMessage.h"
+#include "../../EmberNet/ConnectionMessage.h"
+#include "../../EmberNet/DisconnectMessage.h"
 
 #include "NetworkPostMaster.h"
 #include "../TShared/Random.hpp"

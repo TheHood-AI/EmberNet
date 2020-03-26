@@ -1,5 +1,5 @@
 #pragma once
-#include "../NetworkLibrary/PeerWrapper.h"
+#include "../../EmberNet/PeerWrapper.h"
 #include "NetworkPostMaster.h"
 #include "Timer.hpp"
 struct SNetworkEvent;

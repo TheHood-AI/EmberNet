@@ -29,19 +29,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TShared", "TShared\TShared.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGui", "ImGui\ImGui.vcxproj", "{EE7AA386-0C39-4683-AD48-F8F966A561A5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetworkLibrary", "NetworkLibrary\NetworkLibrary.vcxproj", "{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestingGround", "TestingGround\TestingGround.vcxproj", "{742581AE-518D-4F4E-B019-93615E128C3E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8} = {96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleServer", "ConsoleServer\ConsoleServer.vcxproj", "{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}"
-	ProjectSection(ProjectDependencies) = postProject
-		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8} = {96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SlipperyNet", "SlipperyNet", "{B7BF2287-1DFF-43A4-9A42-18E7AB57C9F4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmberNet", "..\EmberNet\NetworkLibrary.vcxproj", "{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,38 +116,9 @@ Global
 		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}.Retail|x64.Build.0 = Release|x64
 		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}.Retail|x86.ActiveCfg = Release|Win32
 		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8}.Retail|x86.Build.0 = Release|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Debug|x64.ActiveCfg = Debug|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Debug|x64.Build.0 = Debug|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Debug|x86.ActiveCfg = Debug|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Debug|x86.Build.0 = Debug|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Release|x64.ActiveCfg = Release|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Release|x64.Build.0 = Release|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Release|x86.ActiveCfg = Release|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Release|x86.Build.0 = Release|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Retail|x64.ActiveCfg = Release|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Retail|x64.Build.0 = Release|x64
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Retail|x86.ActiveCfg = Release|Win32
-		{742581AE-518D-4F4E-B019-93615E128C3E}.Retail|x86.Build.0 = Release|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Debug|x64.ActiveCfg = Debug|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Debug|x64.Build.0 = Debug|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Debug|x86.ActiveCfg = Debug|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Debug|x86.Build.0 = Debug|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Release|x64.ActiveCfg = Release|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Release|x64.Build.0 = Release|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Release|x86.ActiveCfg = Release|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Release|x86.Build.0 = Release|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Retail|x64.ActiveCfg = Release|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Retail|x64.Build.0 = Release|x64
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Retail|x86.ActiveCfg = Release|Win32
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38}.Retail|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{96DE080D-36F3-45DC-87B8-B9E3A1E15EA8} = {B7BF2287-1DFF-43A4-9A42-18E7AB57C9F4}
-		{742581AE-518D-4F4E-B019-93615E128C3E} = {B7BF2287-1DFF-43A4-9A42-18E7AB57C9F4}
-		{A109C7F3-7FAF-4A2B-9876-CCA7E069BF38} = {B7BF2287-1DFF-43A4-9A42-18E7AB57C9F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2C4DD87-700E-4C8A-B122-2C13F3B024D5}

@@ -1,4 +1,4 @@
-#include "../NetworkLibrary/CommonNetworkIncludes.h"
+#include "../../EmberNet/CommonNetworkIncludes.h"
 #include "Game.h"
 #include "VersionNo.h"
 #include <string>

@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Client.h"
 
-#include "../NetworkLibrary/MessagesTypes.h"
+#include "../../EmberNet/MessagesTypes.h"
 #include "../TShared/NetMessage.h"
-#include "../NetworkLibrary/Serializer.h"
-#include "../NetworkLibrary/DisconnectMessage.h"
+#include "../../EmberNet/Serializer.h"
+#include "../../EmberNet/DisconnectMessage.h"
 #include <iostream>
 #include <fstream>
 

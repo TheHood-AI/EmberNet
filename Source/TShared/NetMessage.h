@@ -2,8 +2,8 @@
 #include <vector>
 #include <string>
 #include "Vector2.hpp"
-#include "../NetworkLibrary/MessagesTypes.h"
-#include "../NetworkLibrary/NetMessage.h"
+#include "../../EmberNet/MessagesTypes.h"
+#include "../../EmberNet/NetMessage.h"
 
 enum class ENetMessageType : char
 {
