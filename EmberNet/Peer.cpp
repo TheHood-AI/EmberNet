@@ -160,9 +160,9 @@ namespace EmberNet
 
 				SerializeType(myGUID, data);
 
-				memcpy(&msg[1], data.data(), 4);
+				memcpy(&msg[2], data.data(), 4);
 
-				Send(mySocket.GetSocket(), msg, 5, 0, p.sender);
+				Send(mySocket.GetSocket(), msg, 6, 0, p.sender);
 
 				break;
 			}
