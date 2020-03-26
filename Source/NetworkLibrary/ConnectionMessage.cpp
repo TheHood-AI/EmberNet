@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ConnectionMessage.h"
 
 #include "Serializer.h"

@@ -1,6 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="CommonNetworkIncludes.h" />
+    <ClInclude Include="Serializer.h" />
+    <ClInclude Include="Packet.h" />
+    <ClInclude Include="MessagesTypes.h" />
+    <ClInclude Include="ExportDefines.h" />
+    <ClInclude Include="Socket.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Peer.h">
+      <Filter>Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="NetMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="HelperMacros.h" />
+    <ClInclude Include="SocketDescriptor.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="PeerWrapper.h">
+      <Filter>Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="DisconnectMessage.h" />
+    <ClInclude Include="Timer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkDiagnostics.h" />
+    <ClInclude Include="NetBigMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NetworkLibrary.cpp" />
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="Serializer.cpp" />
     <ClCompile Include="Socket.cpp">
       <Filter>Socket</Filter>
@@ -40,50 +78,5 @@
     <Filter Include="Common">
       <UniqueIdentifier>{aae904b7-f139-4ff7-972c-21b667b6d942}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Include\framework.h" />
-    <ClInclude Include="..\..\Include\NetworkDiagnostics.h" />
-    <ClInclude Include="..\..\Include\Packet.h" />
-    <ClInclude Include="..\..\Include\Serializer.h" />
-    <ClInclude Include="..\..\Include\CommonNetworkIncludes.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\ConnectionMessage.h">
-      <Filter>Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\DisconnectMessage.h">
-      <Filter>Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\NetBigMessage.h">
-      <Filter>Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\NetMessage.h">
-      <Filter>Messages</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\Peer.h">
-      <Filter>Peer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\PeerWrapper.h">
-      <Filter>Peer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\Timer.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\Socket.h">
-      <Filter>Socket</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\SocketDescriptor.h">
-      <Filter>Socket</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\ExportDefines.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\HelperMacros.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\MessagesTypes.h">
-      <Filter>Messages</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Serializer.h"
 
 void EmberNet::SerializeString(const char* aString, std::vector<char>& someData, const unsigned aSize)

@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="External">
+      <UniqueIdentifier>{b66af2f9-1e43-4aa6-9a07-71d6d5da711f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\Src">
+      <UniqueIdentifier>{14ad8b6c-cb8a-47f8-a357-3aea8ef2c6e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\Inc">
+      <UniqueIdentifier>{7ec64ab9-a309-4a8e-951b-83d1ded44ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{befccd9b-c640-4dce-a089-3d79e9bd03ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{16835005-9760-4aab-9f9a-ae0da0904272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d">
+      <UniqueIdentifier>{5539f8c9-4a2e-470f-87f8-41f4394d4e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source">
+      <UniqueIdentifier>{b260f7c7-bccc-40df-92e4-5a8214f77724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Precompiled">
+      <UniqueIdentifier>{156abf04-5fa1-4315-bc9c-0b7894e9c150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\drawers">
+      <UniqueIdentifier>{09333643-69fc-4573-9555-a6ac4dd226b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\math">
+      <UniqueIdentifier>{99299c34-3a1d-40bd-b94a-15ddb963470f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\light">
+      <UniqueIdentifier>{61559ccd-1457-4a98-a5e8-dbfcb617d702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\shaders">
+      <UniqueIdentifier>{e247c286-8847-4f55-8f41-6aaab31dd567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\render">
+      <UniqueIdentifier>{4ef95fd1-a894-49fd-822d-e8bce4f8eefa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\text">
+      <UniqueIdentifier>{f2bf2c34-f932-47ab-8350-1bed945124cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\texture">
+      <UniqueIdentifier>{4107b8b0-7b5c-4b7c-bc00-673883b7ef94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\error">
+      <UniqueIdentifier>{7b90e6de-6f90-4bd8-ab4b-73d39da2508f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\arrays">
+      <UniqueIdentifier>{4fb7a519-99c1-4815-9598-c07d6fc1629e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\d3d">
+      <UniqueIdentifier>{9a1c537c-12dd-4373-9bf8-dba94e538f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\primitives">
+      <UniqueIdentifier>{30fe072d-c995-4430-ae56-b2aada9929f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\sprite">
+      <UniqueIdentifier>{c8db5d9a-55a1-4bb3-8cb6-ae172672af06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\windows">
+      <UniqueIdentifier>{18c54e7d-35b7-45cc-a137-3bd893aa6956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\d3d">
+      <UniqueIdentifier>{0a4c26cf-92c8-410f-8ae3-7fe5228230bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\drawers">
+      <UniqueIdentifier>{74d8f726-9bc5-41df-8659-2770d16f9bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\error">
+      <UniqueIdentifier>{e4481432-3aec-4c6c-83ba-c3d9f0c48db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\light">
+      <UniqueIdentifier>{87d0d2fe-9614-4ea3-9d83-ff29ad55795c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\primitives">
+      <UniqueIdentifier>{a15dc55e-9120-4fbe-995e-3ab8ee0afcfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\render">
+      <UniqueIdentifier>{b67f8412-6c8b-48bb-8c96-c1631ad13b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\shaders">
+      <UniqueIdentifier>{8bacbc4b-4421-438f-8624-4d018560a138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\sprite">
+      <UniqueIdentifier>{ed6b8613-0ebc-4527-acef-fd46476cbd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\text">
+      <UniqueIdentifier>{3fb0ff8f-caf5-495d-964b-8141b7711c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\texture">
+      <UniqueIdentifier>{d4259b15-e965-4dbd-a216-c3b7f17dc59c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\windows">
+      <UniqueIdentifier>{b0bbd750-02f0-4ac9-94fd-3aa4e0c9f90b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\math">
+      <UniqueIdentifier>{cf72b841-539e-4f6d-ac82-7598ba833dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\filewatcher">
+      <UniqueIdentifier>{41bc5c31-7c49-46dc-9cf7-601d2b999405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\filewatcher">
+      <UniqueIdentifier>{239423b5-73bf-46a2-8c9d-b9a85bed927e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\noise">
+      <UniqueIdentifier>{38f68827-136a-4a9f-bcab-4e76c834700a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\noise">
+      <UniqueIdentifier>{9ff599d2-adf3-4935-a3b2-6fc1e001866c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\drawers\Debug">
+      <UniqueIdentifier>{be04318b-3213-4d1f-a7b3-31d7a2497e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\video">
+      <UniqueIdentifier>{c172d978-4aff-4e13-a85c-6f737800c4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\video">
+      <UniqueIdentifier>{f5908271-4be8-4fb4-b922-ad1dbde689b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\input">
+      <UniqueIdentifier>{479d63bc-6e9c-46a0-9464-22445d9c830f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\Spine">
+      <UniqueIdentifier>{0e564e32-16c0-4e21-bd30-56d2482808c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\Spine\inc">
+      <UniqueIdentifier>{2269bfad-9a16-46a5-81dc-e74fbe2eaa01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\Spine\src">
+      <UniqueIdentifier>{141e2ed8-fb79-4061-9d84-444ea89e7198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\animation">
+      <UniqueIdentifier>{0cad2708-4d07-43f1-bd6c-659d8efba69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\animation">
+      <UniqueIdentifier>{5af60030-21f8-4de4-b165-f20b86849985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\input">
+      <UniqueIdentifier>{ca984bad-ab81-4e8f-b3c1-2620c2fda8ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\source\audio">
+      <UniqueIdentifier>{e4d5fac3-0eaf-47e3-898c-f0c4b565f9e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tga2d\audio">
+      <UniqueIdentifier>{5741a9c3-cc51-433e-b76e-16cf97329644}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectXTK\Inc\DDSTextureLoader.h">
+      <Filter>External\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTK\Inc\WICTextureLoader.h">
+      <Filter>External\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Source\Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\fontfile.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\textfile.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\engine.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\d3d\direct_3d.h">
+      <Filter>Source\tga2d\d3d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\windows\windows_window.h">
+      <Filter>Source\tga2d\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\render\render_common.h">
+      <Filter>Source\tga2d\render</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\common_math.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\sprite\textured_quad.h">
+      <Filter>Source\tga2d\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\custom_shape_drawer.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\line_drawer.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\debug_drawer.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\textured_quad_batch_drawer.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\textured_quad_drawer.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\error\error_manager.h">
+      <Filter>Source\source\error</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\primitives\custom_shape.h">
+      <Filter>Source\source\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\primitives\line_primitive.h">
+      <Filter>Source\source\primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\filewatcher\file_watcher.h">
+      <Filter>Source\tga2d\filewatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\light\light.h">
+      <Filter>Source\tga2d\light</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\light\light_manager.h">
+      <Filter>Source\tga2d\light</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\noise\perlin_noise.h">
+      <Filter>Source\tga2d\noise</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\color.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\matrix44.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\vector2.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\vector4.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\arrays\simple_pointer_array.h">
+      <Filter>Source\tga2d\arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\render\render_object.h">
+      <Filter>Source\tga2d\render</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\render\renderer.h">
+      <Filter>Source\tga2d\render</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\shaders\shader.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\shaders\shader_common.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\shaders\shader_normal.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\shaders\shader_normal_instanced.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\sprite\sprite.h">
+      <Filter>Source\tga2d\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\sprite\sprite_batch.h">
+      <Filter>Source\tga2d\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\sprite\textured_quad_batch.h">
+      <Filter>Source\tga2d\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\parser.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\text.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\text_service.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\token.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\texture\texture.h">
+      <Filter>Source\tga2d\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\texture\texture_manager.h">
+      <Filter>Source\tga2d\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\common_converters.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\drawers\debug_performancegraph.h">
+      <Filter>Source\tga2d\drawers</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTK\Inc\ScreenGrab.h">
+      <Filter>External\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\shaders\customshader.h">
+      <Filter>Source\tga2d\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\videoplayer\video.h">
+      <Filter>Source\tga2d\video</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\videoplayer\videoplayer.h">
+      <Filter>Source\tga2d\video</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\StepTimer.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\engine_defines.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\text\text_structures.h">
+      <Filter>Source\tga2d\text</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\arrays\tinyarrayonheap.h">
+      <Filter>Source\tga2d\arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="xxh64_en.hpp">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\input\XInput.h">
+      <Filter>Source\source\input</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Animation.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\AnimationState.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\AnimationStateData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Array.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Atlas.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\AtlasAttachmentLoader.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Attachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\AttachmentLoader.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Bone.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\BoneData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\BoundingBoxAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\ClippingAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Color.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\dll.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Event.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\EventData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\extension.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\IkConstraint.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\IkConstraintData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\MeshAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\PathAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\PathConstraint.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\PathConstraintData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\PointAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\RegionAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Skeleton.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SkeletonBinary.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SkeletonBounds.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SkeletonClipping.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SkeletonData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SkeletonJson.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Skin.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Slot.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\SlotData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\spine.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\TransformConstraint.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\TransformConstraintData.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\Triangulator.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\VertexAttachment.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\include\spine\VertexEffect.h">
+      <Filter>External\Spine\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\src\Json.h">
+      <Filter>External\Spine\src</Filter>
+    </ClInclude>
+    <ClInclude Include="spine\src\kvec.h">
+      <Filter>External\Spine\src</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\animation\spineanimation.h">
+      <Filter>Source\tga2d\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\animation\SpineAnimation_internal.h">
+      <Filter>Source\tga2d\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\tgaloader.h">
+      <Filter>Source\tga2d</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\videoplayer\video_audio.h">
+      <Filter>Source\tga2d\video</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\audio\audio_out.h">
+      <Filter>Source\tga2d\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\audio\audio.h">
+      <Filter>Source\tga2d\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="tga2d\math\vector2imp.h">
+      <Filter>Source\tga2d\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectXTK\Src\DDSTextureLoader.cpp">
+      <Filter>External\Inc</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXTK\Src\WICTextureLoader.cpp">
+      <Filter>External\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source\Precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\fontfile.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\textfile.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\engine.cpp">
+      <Filter>Source\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\d3d\direct_3d.cpp">
+      <Filter>Source\source\d3d</Filter>
+    </ClCompile>
+    <ClCompile Include="source\windows\windows_window.cpp">
+      <Filter>Source\source\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sprite\textured_quad.cpp">
+      <Filter>Source\source\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\common_math.cpp">
+      <Filter>Source\source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\custom_shape_drawer.cpp">
+      <Filter>Source\source\drawers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\line_drawer.cpp">
+      <Filter>Source\source\drawers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\textured_quad_batch_drawer.cpp">
+      <Filter>Source\source\drawers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\textured_quad_drawer.cpp">
+      <Filter>Source\source\drawers</Filter>
+    </ClCompile>
+    <ClCompile Include="source\error\error_manager.cpp">
+      <Filter>Source\tga2d\error</Filter>
+    </ClCompile>
+    <ClCompile Include="source\primitives\custom_shape.cpp">
+      <Filter>Source\tga2d\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="source\primitives\line_primitive.cpp">
+      <Filter>Source\tga2d\primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="source\filewatcher\file_watcher.cpp">
+      <Filter>Source\source\filewatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="source\light\light.cpp">
+      <Filter>Source\source\light</Filter>
+    </ClCompile>
+    <ClCompile Include="source\light\light_manager.cpp">
+      <Filter>Source\source\light</Filter>
+    </ClCompile>
+    <ClCompile Include="source\noise\perlin_noise.cpp">
+      <Filter>Source\source\noise</Filter>
+    </ClCompile>
+    <ClCompile Include="source\render\render_object.cpp">
+      <Filter>Source\source\render</Filter>
+    </ClCompile>
+    <ClCompile Include="source\render\renderer.cpp">
+      <Filter>Source\source\render</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\shader.cpp">
+      <Filter>Source\source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\shader_normal.cpp">
+      <Filter>Source\source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\shader_normal_instanced.cpp">
+      <Filter>Source\source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sprite\sprite.cpp">
+      <Filter>Source\source\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sprite\sprite_batch.cpp">
+      <Filter>Source\source\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sprite\textured_quad_batch.cpp">
+      <Filter>Source\source\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\parser.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\text.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\text_service.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\text\token.cpp">
+      <Filter>Source\source\text</Filter>
+    </ClCompile>
+    <ClCompile Include="source\texture\texture.cpp">
+      <Filter>Source\source\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="source\texture\texture_manager.cpp">
+      <Filter>Source\source\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\debug_drawer.cpp">
+      <Filter>Source\source\drawers\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\drawers\debug_performancegraph.cpp">
+      <Filter>Source\source\drawers\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXTK\Src\ScreenGrab.cpp">
+      <Filter>External\Inc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\customshader.cpp">
+      <Filter>Source\source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="source\videoplayer\video.cpp">
+      <Filter>Source\source\video</Filter>
+    </ClCompile>
+    <ClCompile Include="source\videoplayer\videoplayer.cpp">
+      <Filter>Source\source\video</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Animation.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\AnimationState.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\AnimationStateData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Array.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Atlas.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\AtlasAttachmentLoader.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Attachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\AttachmentLoader.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Bone.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\BoneData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\BoundingBoxAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\ClippingAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Color.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Event.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\EventData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\extension.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\IkConstraint.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\IkConstraintData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Json.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\MeshAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathConstraint.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathConstraintData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\PointAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\RegionAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Skeleton.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonBinary.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonBounds.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonClipping.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonJson.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Skin.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Slot.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\SlotData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\TransformConstraint.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\TransformConstraintData.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\Triangulator.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\VertexAttachment.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="spine\src\VertexEffect.c">
+      <Filter>External\Spine\src</Filter>
+    </ClCompile>
+    <ClCompile Include="source\animation\spineanimation.cpp">
+      <Filter>Source\source\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\animation\SpineAnimation_internal.cpp">
+      <Filter>Source\source\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\input\XInput.cpp">
+      <Filter>Source\tga2d\input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tgaloader.cpp">
+      <Filter>Source\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\videoplayer\video_audio.cpp">
+      <Filter>Source\source\video</Filter>
+    </ClCompile>
+    <ClCompile Include="source\audio\audio_out.cpp">
+      <Filter>Source\source\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="source\audio\audio.cpp">
+      <Filter>Source\source\audio</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DX2DEngine.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tga.ico">
+      <Filter>Resource</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Peer.h"
 
 #include <cassert>
@@ -91,7 +92,7 @@ namespace EmberNet
 		msg.Serialize(data);
 
 
-		SendGuaranteedMessage(data.data(), static_cast<unsigned>(data.size()), *reinterpret_cast<SOCKADDR*>(&addresToConnectTo));
+		Send(mySocket.GetSocket(), data.data(), static_cast<unsigned>(data.size()), 0, *reinterpret_cast<SOCKADDR*>(&addresToConnectTo));
 	}
 
 	bool CPeer::WorkThroughMessages()
@@ -217,7 +218,7 @@ namespace EmberNet
 
 				const auto uid = msg.GetUID();
 
-				if (myRecievedGuaranteedMesssages.find(uid) == myRecievedGuaranteedMesssages.end())
+				if (myRecievedGuaranteedMesssages.find(std::make_pair(uid, (unsigned)msg.mySenderID)) == myRecievedGuaranteedMesssages.end())
 				{
 					std::vector<char> data;
 					data.push_back(CAST_TO_UCHAR(ENetMessageType::Acknowledge));
@@ -230,7 +231,7 @@ namespace EmberNet
 					packet.size = msg.mySizeOfData;
 					packet.sender = p.sender;
 					myRecievedPackets.push(packet);
-					myRecievedGuaranteedMesssages.insert(uid);
+					myRecievedGuaranteedMesssages.insert(std::make_pair(uid, (unsigned)msg.mySenderID));
 				}
 				break;
 			}
@@ -298,6 +299,59 @@ namespace EmberNet
 		assert(aDataSize < 512 || aFlag == SendFlags::BigPackage && "You're about to send more data than is safe in udp. Please set aFlag = BigPackage");
 		for (auto& addr : myConnectedAddreses)
 		{
+			switch (aFlag)
+			{
+			case SendFlags::BigPackage:
+			{
+				SendBigPackage(someDataToSend, aDataSize, addr.myAddress);
+				break;
+			}
+			case SendFlags::Guaranteed:
+				SendGuaranteedMessage(someDataToSend, aDataSize, addr.myAddress);
+				break;
+			case SendFlags::NoFlag:
+			default:
+				Send(mySocket.GetSocket(), someDataToSend, aDataSize, 0, addr.myAddress);
+				break;
+			}
+		}
+	}
+
+	void CPeer::SendTo(const char* someDataToSend, const unsigned aDataSize, SendFlags aFlag, int aPeerID)
+	{
+		assert(aDataSize < 512 || aFlag == SendFlags::BigPackage && "You're about to send more data than is safe in udp. Please set aFlag = BigPackage");
+		for (auto& addr : myConnectedAddreses)
+		{
+			if (addr.myUID == aPeerID)
+			{
+				switch (aFlag)
+				{
+				case SendFlags::BigPackage:
+				{
+					SendBigPackage(someDataToSend, aDataSize, addr.myAddress);
+					break;
+				}
+				case SendFlags::Guaranteed:
+					SendGuaranteedMessage(someDataToSend, aDataSize, addr.myAddress);
+					break;
+				case SendFlags::NoFlag:
+				default:
+					Send(mySocket.GetSocket(), someDataToSend, aDataSize, 0, addr.myAddress);
+					break;
+				}
+			}
+		}
+	}
+
+	void CPeer::SendToAllExcept(const char* someDataToSend, const unsigned aDataSize, SendFlags aFlag,
+		int aPeerIDToIgnore)
+	{
+		assert(aDataSize < 512 || aFlag == SendFlags::BigPackage && "You're about to send more data than is safe in udp. Please set aFlag = BigPackage");
+		for (auto& addr : myConnectedAddreses)
+		{
+			if (addr.myUID == aPeerIDToIgnore)
+				continue;
+
 			switch (aFlag)
 			{
 			case SendFlags::BigPackage:
@@ -442,6 +496,7 @@ namespace EmberNet
 		++myGuaranteedMessagesSent;
 		CGuaranteedMessage message;
 		message.SetData(someData, aDataSize);
+		message.mySenderID = myGUID;
 		message.AssignUID();
 
 		auto data = SerializeMessage(message);

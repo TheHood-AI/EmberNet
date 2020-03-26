@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "PeerWrapper.h"
 #include <cassert>
 #include <utility>
@@ -57,7 +58,7 @@ void EmberNet::IPeer::Connect(const std::string& aRemoteAddres, const unsigned s
 }
 
 /**
- * \brief 
+ * \brief
  * \return Returns true if there is still messages laying in the buffer
  */
 bool EmberNet::IPeer::WorkThroughMessages() const
@@ -86,6 +87,22 @@ void EmberNet::IPeer::Send(const char* someDataToSend, const unsigned aDataSize,
 	EMBER_NET_ASSERT(myPeer != nullptr, "Peer is nullptr. Have you ran the constructor...?");
 
 	myPeer->Send(someDataToSend, aDataSize, aFlag);
+}
+
+void EmberNet::IPeer::SendTo(const char* someDataToSend, const unsigned aDataSize, SendFlags aFlag, int aPeerID)
+{
+	EMBER_NET_ASSERT(myPeer != nullptr, "Peer is nullptr. Have you ran the constructor...?");
+
+	myPeer->SendTo(someDataToSend, aDataSize, aFlag, aPeerID);
+
+}
+
+void EmberNet::IPeer::SendToAllExcept(const char* someDataToSend, const unsigned aDataSize, SendFlags aFlag,
+	int aPeerIDToIgnore)
+{
+	EMBER_NET_ASSERT(myPeer != nullptr, "Peer is nullptr. Have you ran the constructor...?");
+
+	myPeer->SendToAllExcept(someDataToSend, aDataSize, aFlag, aPeerIDToIgnore);
 }
 
 void EmberNet::IPeer::MapFunctionToMessage(std::function<void(char*, unsigned int)> aFunction, unsigned char aMessage) const

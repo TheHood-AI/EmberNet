@@ -92,14 +92,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions);_WINSOCK_DEPRECATED_NO_WARNINGS;NETWORKLIBRARY_EXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NetworkLibrary\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -153,7 +153,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NetworkLibrary\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -165,6 +165,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CommonNetworkIncludes.h" />
+    <ClInclude Include="ConnectionMessage.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="DisconnectMessage.h" />
+    <ClInclude Include="ExportDefines.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="HelperMacros.h" />
+    <ClInclude Include="MessagesTypes.h" />
+    <ClInclude Include="NetBigMessage.h" />
+    <ClInclude Include="NetMessage.h" />
+    <ClInclude Include="NetworkDiagnostics.h" />
+    <ClInclude Include="Packet.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Peer.h" />
+    <ClInclude Include="PeerWrapper.h" />
+    <ClInclude Include="Serializer.h" />
+    <ClInclude Include="Socket.h" />
+    <ClInclude Include="SocketDescriptor.h" />
+    <ClInclude Include="Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="ConnectionMessage.cpp">
       <SubType>
       </SubType>
@@ -172,30 +195,18 @@
     <ClCompile Include="DisconnectMessage.cpp" />
     <ClCompile Include="NetBigMessage.cpp" />
     <ClCompile Include="NetMessage.cpp" />
+    <ClCompile Include="NetworkLibrary.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Peer.cpp" />
     <ClCompile Include="PeerWrapper.cpp" />
     <ClCompile Include="Serializer.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="Timer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Include\CommonNetworkIncludes.h" />
-    <ClInclude Include="..\..\Include\ConnectionMessage.h" />
-    <ClInclude Include="..\..\Include\DisconnectMessage.h" />
-    <ClInclude Include="..\..\Include\ExportDefines.h" />
-    <ClInclude Include="..\..\Include\framework.h" />
-    <ClInclude Include="..\..\Include\HelperMacros.h" />
-    <ClInclude Include="..\..\Include\MessagesTypes.h" />
-    <ClInclude Include="..\..\Include\NetBigMessage.h" />
-    <ClInclude Include="..\..\Include\NetMessage.h" />
-    <ClInclude Include="..\..\Include\NetworkDiagnostics.h" />
-    <ClInclude Include="..\..\Include\Packet.h" />
-    <ClInclude Include="..\..\Include\Peer.h" />
-    <ClInclude Include="..\..\Include\PeerWrapper.h" />
-    <ClInclude Include="..\..\Include\Serializer.h" />
-    <ClInclude Include="..\..\Include\Socket.h" />
-    <ClInclude Include="..\..\Include\SocketDescriptor.h" />
-    <ClInclude Include="..\..\Include\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
