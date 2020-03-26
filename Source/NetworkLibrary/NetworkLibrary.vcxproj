@@ -172,7 +172,6 @@
     <ClCompile Include="DisconnectMessage.cpp" />
     <ClCompile Include="NetBigMessage.cpp" />
     <ClCompile Include="NetMessage.cpp" />
-    <ClCompile Include="NetworkLibrary.cpp" />
     <ClCompile Include="Peer.cpp" />
     <ClCompile Include="PeerWrapper.cpp" />
     <ClCompile Include="Serializer.cpp" />
