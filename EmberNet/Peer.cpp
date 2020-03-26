@@ -217,15 +217,12 @@ namespace EmberNet
 				DeSerializeMessage(msg, p.data, p.size);
 
 				const auto uid = msg.GetUID();
-
+				std::vector<char> data;
+				data.push_back(CAST_TO_UCHAR(ENetMessageType::Acknowledge));
+				SerializeType(uid, data);
+				Send(mySocket.GetSocket(), data.data(), static_cast<int>(data.size()), 0, p.sender);
 				if (myRecievedGuaranteedMesssages.find(std::make_pair(uid, (unsigned)msg.mySenderID)) == myRecievedGuaranteedMesssages.end())
 				{
-					std::vector<char> data;
-					data.push_back(CAST_TO_UCHAR(ENetMessageType::Acknowledge));
-					SerializeType(uid, data);
-
-					Send(mySocket.GetSocket(), data.data(), static_cast<int>(data.size()), 0, p.sender);
-
 					Packet packet;
 					memcpy(packet.data, msg.myData.data(), msg.mySizeOfData);
 					packet.size = msg.mySizeOfData;
@@ -526,10 +523,16 @@ namespace EmberNet
 
 			SendGuaranteedMessage(data.data(), data.size(), aAddres);
 
+			int i = 0;
 			for (auto& chunk : msg.myChunks)
 			{
+				++i;
 				std::vector<char> chunkData = SerializeMessage(chunk);
 				SendGuaranteedMessage(chunkData.data(), chunkData.size(), aAddres);
+				if (i % 100 == 0)
+				{
+					std::this_thread::sleep_for(std::chrono::milliseconds(300));
+				}
 			}
 			delete[] buffer;
 			buffer = nullptr;

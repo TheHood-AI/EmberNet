@@ -44,7 +44,7 @@ namespace EmberNet
 
 	void CNetBigPackage::SetBigMessage(const char* data, unsigned int aSize)
 	{
-		constexpr float dataPerChunk = 400;
+		constexpr float dataPerChunk = 480;
 
 		myAmmountOfChunks = std::ceil(static_cast<float>(aSize) / dataPerChunk);
 

@@ -22,24 +22,24 @@ void CClient::Start()
 
 	myPeer.MapFunctionToMessage([this](char* someData, unsigned short aSize)
 	{
-		//std::ifstream stream;
-		//stream.open("BigTGA.tga", std::ios::binary);
-		//
-		//if (stream.is_open())
-		//{
-		//	std::cout << "Hey!" << std::endl;
-		//}
-		//stream.ignore(std::numeric_limits<std::streamsize>::max());
-		//std::streamsize length = stream.gcount();
-		//stream.clear();   //  Since ignore will have set eof.
-		//stream.seekg(0, std::ios_base::beg);
-		//
-		//char* buffer = new char[length + 1];
-		//stream.read(&buffer[1], length);
-		//buffer[0] = CAST_TO_UCHAR(ENetMessageType::Image);
-		//myPeer.Send(buffer, length + 1, EmberNet::SendFlags::BigPackage);
-		//delete[] buffer;
-		//buffer = nullptr;
+		std::ifstream stream;
+		stream.open("BigTGA.tga", std::ios::binary);
+		
+		if (stream.is_open())
+		{
+			std::cout << "Hey!" << std::endl;
+		}
+		stream.ignore(std::numeric_limits<std::streamsize>::max());
+		std::streamsize length = stream.gcount();
+		stream.clear();   //  Since ignore will have set eof.
+		stream.seekg(0, std::ios_base::beg);
+		
+		char* buffer = new char[length + 1];
+		stream.read(&buffer[1], length);
+		buffer[0] = CAST_TO_UCHAR(ENetMessageType::Image);
+		myPeer.Send(buffer, length + 1, EmberNet::SendFlags::BigPackage);
+		delete[] buffer;
+		buffer = nullptr;
 	}, CAST_TO_UCHAR(EmberNet::ENetMessageType::ConnectionConfirm));
 	myPeer.MapFunctionToMessage(BIND(CClient::PlayerConnected, this), CAST_TO_UCHAR(ENetMessageType::PlayerConnected));
 	myPeer.MapFunctionToMessage(BIND(CClient::PlayerDisconnected, this), CAST_TO_UCHAR(EmberNet::ENetMessageType::DisconnectMsg));

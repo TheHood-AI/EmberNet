@@ -97,7 +97,7 @@ void CServerMain::Update()
 	
 		myCountTime = 0;
 	}
-	myPeer.WorkThroughMessages();
+	while(myPeer.WorkThroughMessages());
 }
 
 void CServerMain::SetPostMaster(CNetworkPostMaster * aPostMaster)
