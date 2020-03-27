@@ -12,7 +12,7 @@
 
 namespace EmberNet {
 
-	void EXPORT StartWSA();
+	bool EXPORT StartWSA();
 
 	struct EXPORT CreateParameters
 	{

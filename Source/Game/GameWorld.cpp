@@ -22,7 +22,7 @@ C_GameWorld::~C_GameWorld()
 void C_GameWorld::Init()
 {
 	myClient.Start();
-	myClient.Connect("151.177.31.216", 5150);
+	myClient.Connect("83.253.7.249", 5150);
 
 	myClient.SetPostMaster(&myPostMaster);
 	myPostMaster.RegisterListener(ENetworkEventType::PlayerConnected, *this);

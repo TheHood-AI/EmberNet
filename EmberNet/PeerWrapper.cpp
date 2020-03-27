@@ -5,7 +5,7 @@
 #include "Peer.h"
 #include "HelperMacros.h"
 
-void EmberNet::StartWSA()
+bool EmberNet::StartWSA()
 {
 	WSADATA wsaData;
 
@@ -15,13 +15,16 @@ void EmberNet::StartWSA()
 	if (err != 0)
 	{
 		EMBER_NET_LOG("WSAStartup failed with error: %d\n", err);
+		return false;
 	}
 
 	if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
 	{
 		EMBER_NET_LOG("Could not find a usable version of Windsock.dll\n");
+		return false;
 		WSACleanup();
 	}
+	return true;
 }
 
 EmberNet::IPeer::IPeer()
