@@ -41,7 +41,7 @@ namespace EmberNet
 	{
 		CNetMessage::Serialize(someData);
 
-		for (int i = 0; i < mySizeOfData; ++i)
+		for (unsigned int i = 0; i < mySizeOfData; ++i)
 		{
 			someData.push_back(myData[i]);
 		}
@@ -62,11 +62,11 @@ namespace EmberNet
 		CNetMessage::DeSerialize(someData);
 	}
 
-	void CGuaranteedMessage::SetData(const char* someData, unsigned short aSize)
+	void CGuaranteedMessage::SetData(const char* someData, unsigned int aSize)
 	{
 		mySizeOfData = aSize;
 		myData.resize(mySizeOfData);
-		for(int i = 0; i < aSize; ++i)
+		for(unsigned int i = 0; i < aSize; ++i)
 		{
 			myData[i] = someData[i];
 		}

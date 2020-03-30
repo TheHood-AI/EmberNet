@@ -21,8 +21,8 @@ bool EmberNet::StartWSA()
 	if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
 	{
 		EMBER_NET_LOG("Could not find a usable version of Windsock.dll\n");
-		return false;
 		WSACleanup();
+		return false;
 	}
 	return true;
 }

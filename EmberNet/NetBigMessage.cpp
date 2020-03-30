@@ -46,11 +46,11 @@ namespace EmberNet
 	{
 		constexpr float dataPerChunk = 480;
 
-		myAmmountOfChunks = std::ceil(static_cast<float>(aSize) / dataPerChunk);
+		myAmmountOfChunks = static_cast<unsigned>(std::ceil(static_cast<float>(aSize) / dataPerChunk));
 
 		myChunks.reserve(myAmmountOfChunks);
 
-		int dataIndex = 0;
+		unsigned int dataIndex = 0;
 
 		for (unsigned int i = 0; i < myAmmountOfChunks; ++i)
 		{

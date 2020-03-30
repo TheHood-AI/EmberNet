@@ -174,7 +174,7 @@ namespace EmberNet
 				data.push_back(p.data[4]);
 				data.push_back(p.data[5]);
 
-				int id = 0;
+				unsigned int id = 0;
 				DeSerializeType(id, data);
 				for (auto& addr : myConnectedAddreses)
 				{
@@ -262,7 +262,7 @@ namespace EmberNet
 						}
 						if (myMappedFunctions.find(bigPacket.myChunks[0].myDataChunk[0]) != myMappedFunctions.end())
 						{
-							myMappedFunctions[bigPacket.myChunks[0].myDataChunk[0]](data.data(), data.size());
+							myMappedFunctions[bigPacket.myChunks[0].myDataChunk[0]](data.data(), static_cast<int>(data.size()));
 						};
 						myBigBackages.erase(chunk.myBigDataID);
 					}
@@ -319,7 +319,7 @@ namespace EmberNet
 		assert(aDataSize < 512 || aFlag == SendFlags::BigPackage && "You're about to send more data than is safe in udp. Please set aFlag = BigPackage");
 		for (auto& addr : myConnectedAddreses)
 		{
-			if (addr.myUID == aPeerID)
+			if (addr.myUID == static_cast<unsigned>(aPeerID))
 			{
 				switch (aFlag)
 				{
@@ -346,7 +346,7 @@ namespace EmberNet
 		assert(aDataSize < 512 || aFlag == SendFlags::BigPackage && "You're about to send more data than is safe in udp. Please set aFlag = BigPackage");
 		for (auto& addr : myConnectedAddreses)
 		{
-			if (addr.myUID == aPeerIDToIgnore)
+			if (addr.myUID == static_cast<unsigned>(aPeerIDToIgnore))
 				continue;
 
 			switch (aFlag)
@@ -493,7 +493,7 @@ namespace EmberNet
 		++myGuaranteedMessagesSent;
 		CGuaranteedMessage message;
 		message.SetData(someData, aDataSize);
-		message.mySenderID = myGUID;
+		message.mySenderID = static_cast<unsigned short>(myGUID);
 		message.AssignUID();
 
 		auto data = SerializeMessage(message);
@@ -514,21 +514,21 @@ namespace EmberNet
 		std::thread bigPackageThread([this, aAddres, aDataSize, someData, &haveCopiedData]()
 		{
 			char* buffer = new char[aDataSize];
-			memcpy(buffer, someData, aDataSize);
+			memcpy(buffer, someData, static_cast<size_t>(aDataSize));
 			haveCopiedData = true;
 			CNetBigPackage msg;
 			msg.AssignBigPackageUID();
 			msg.SetBigMessage(buffer, aDataSize);
 			std::vector<char> data = SerializeMessage(msg);
 
-			SendGuaranteedMessage(data.data(), data.size(), aAddres);
+			SendGuaranteedMessage(data.data(), static_cast<unsigned>(data.size()), aAddres);
 
 			int i = 0;
 			for (auto& chunk : msg.myChunks)
 			{
 				++i;
 				std::vector<char> chunkData = SerializeMessage(chunk);
-				SendGuaranteedMessage(chunkData.data(), chunkData.size(), aAddres);
+				SendGuaranteedMessage(chunkData.data(), static_cast<unsigned>(chunkData.size()), aAddres);
 				if (i % 100 == 0)
 				{
 					std::this_thread::sleep_for(std::chrono::milliseconds(300));
@@ -537,6 +537,7 @@ namespace EmberNet
 			delete[] buffer;
 			buffer = nullptr;
 		});
+
 		bigPackageThread.detach();
 		while (!haveCopiedData)
 		{

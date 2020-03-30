@@ -42,9 +42,9 @@ namespace EmberNet
 		
 		void Serialize(std::vector<char>& someData) const override;
 		void DeSerialize(std::vector<char>& someData) override;
-		void SetData(const char* someData, unsigned short aSize);
+		void SetData(const char* someData, unsigned int aSize);
 	
 		std::vector<char> myData;
-		unsigned short mySizeOfData = 0;
+		unsigned int mySizeOfData = 0;
 	};
 }
