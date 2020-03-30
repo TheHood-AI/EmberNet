@@ -1,5 +1,6 @@
 # EmberNet
-A network library for games written in c++
+A network library for games written in c++.
+To try it out, take the header files in EmberNet/ and the binary files from Library/
 
 # How to use
 Everything in the library uses `namespace EmberNet`<br/>
