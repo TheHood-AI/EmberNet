@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Retail|x64">
+      <Configuration>Retail</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{11F98BF6-7BDB-4CFB-96CF-577DB4AE312F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DX2DEngine</RootNamespace>
+    <ProjectName>TGA2D</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\lib.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\lib.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\lib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);ffmpeg-2.0/;vld/</IncludePath>
+    <LibraryPath>ffmpeg-2.0\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);ffmpeg-2.0/;vld/</IncludePath>
+    <LibraryPath>ffmpeg-2.0\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <OutDir>$(SolutionDir)..\Lib\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);ffmpeg-2.0/;vld/</IncludePath>
+    <LibraryPath>ffmpeg-2.0\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;_WIN32_WINNT=0x0601;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)tga2d\;$(ProjectDir)DirectXTK\Inc\;$(ProjectDir)spine\include\;$(SolutionDir)ImGui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>DXGI.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_RELEASE;_LIB;_WIN32_WINNT=0x0601;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)tga2d\;$(ProjectDir)DirectXTK\Inc\;$(ProjectDir)spine\include\;$(SolutionDir)ImGui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>DXGI.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_RETAIL;_LIB;_WIN32_WINNT=0x0601;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)tga2d\;$(ProjectDir)DirectXTK\Inc\;$(ProjectDir)spine\include\;$(SolutionDir)ImGui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>DXGI.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectXTK\Inc\DDSTextureLoader.h" />
+    <ClInclude Include="DirectXTK\Inc\ScreenGrab.h" />
+    <ClInclude Include="DirectXTK\Inc\WICTextureLoader.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="spine\include\spine\Animation.h" />
+    <ClInclude Include="spine\include\spine\AnimationState.h" />
+    <ClInclude Include="spine\include\spine\AnimationStateData.h" />
+    <ClInclude Include="spine\include\spine\Array.h" />
+    <ClInclude Include="spine\include\spine\Atlas.h" />
+    <ClInclude Include="spine\include\spine\AtlasAttachmentLoader.h" />
+    <ClInclude Include="spine\include\spine\Attachment.h" />
+    <ClInclude Include="spine\include\spine\AttachmentLoader.h" />
+    <ClInclude Include="spine\include\spine\Bone.h" />
+    <ClInclude Include="spine\include\spine\BoneData.h" />
+    <ClInclude Include="spine\include\spine\BoundingBoxAttachment.h" />
+    <ClInclude Include="spine\include\spine\ClippingAttachment.h" />
+    <ClInclude Include="spine\include\spine\Color.h" />
+    <ClInclude Include="spine\include\spine\dll.h" />
+    <ClInclude Include="spine\include\spine\Event.h" />
+    <ClInclude Include="spine\include\spine\EventData.h" />
+    <ClInclude Include="spine\include\spine\extension.h" />
+    <ClInclude Include="spine\include\spine\IkConstraint.h" />
+    <ClInclude Include="spine\include\spine\IkConstraintData.h" />
+    <ClInclude Include="spine\include\spine\MeshAttachment.h" />
+    <ClInclude Include="spine\include\spine\PathAttachment.h" />
+    <ClInclude Include="spine\include\spine\PathConstraint.h" />
+    <ClInclude Include="spine\include\spine\PathConstraintData.h" />
+    <ClInclude Include="spine\include\spine\PointAttachment.h" />
+    <ClInclude Include="spine\include\spine\RegionAttachment.h" />
+    <ClInclude Include="spine\include\spine\Skeleton.h" />
+    <ClInclude Include="spine\include\spine\SkeletonBinary.h" />
+    <ClInclude Include="spine\include\spine\SkeletonBounds.h" />
+    <ClInclude Include="spine\include\spine\SkeletonClipping.h" />
+    <ClInclude Include="spine\include\spine\SkeletonData.h" />
+    <ClInclude Include="spine\include\spine\SkeletonJson.h" />
+    <ClInclude Include="spine\include\spine\Skin.h" />
+    <ClInclude Include="spine\include\spine\Slot.h" />
+    <ClInclude Include="spine\include\spine\SlotData.h" />
+    <ClInclude Include="spine\include\spine\spine.h" />
+    <ClInclude Include="spine\include\spine\TransformConstraint.h" />
+    <ClInclude Include="spine\include\spine\TransformConstraintData.h" />
+    <ClInclude Include="spine\include\spine\Triangulator.h" />
+    <ClInclude Include="spine\include\spine\VertexAttachment.h" />
+    <ClInclude Include="spine\include\spine\VertexEffect.h" />
+    <ClInclude Include="spine\src\Json.h" />
+    <ClInclude Include="spine\src\kvec.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="tga2d\animation\spineanimation.h" />
+    <ClInclude Include="tga2d\animation\SpineAnimation_internal.h" />
+    <ClInclude Include="tga2d\arrays\simple_pointer_array.h" />
+    <ClInclude Include="tga2d\arrays\tinyarrayonheap.h" />
+    <ClInclude Include="tga2d\audio\audio.h" />
+    <ClInclude Include="tga2d\audio\audio_out.h" />
+    <ClInclude Include="tga2d\common_converters.h" />
+    <ClInclude Include="tga2d\d3d\direct_3d.h" />
+    <ClInclude Include="tga2d\drawers\custom_shape_drawer.h" />
+    <ClInclude Include="tga2d\drawers\debug_drawer.h" />
+    <ClInclude Include="tga2d\drawers\debug_performancegraph.h" />
+    <ClInclude Include="tga2d\drawers\line_drawer.h" />
+    <ClInclude Include="tga2d\drawers\textured_quad_batch_drawer.h" />
+    <ClInclude Include="tga2d\drawers\textured_quad_drawer.h" />
+    <ClInclude Include="tga2d\engine.h" />
+    <ClInclude Include="tga2d\engine_defines.h" />
+    <ClInclude Include="tga2d\error\error_manager.h" />
+    <ClInclude Include="tga2d\filewatcher\file_watcher.h" />
+    <ClInclude Include="tga2d\input\XInput.h" />
+    <ClInclude Include="tga2d\light\light.h" />
+    <ClInclude Include="tga2d\light\light_manager.h" />
+    <ClInclude Include="tga2d\math\color.h" />
+    <ClInclude Include="tga2d\math\common_math.h" />
+    <ClInclude Include="tga2d\math\matrix44.h" />
+    <ClInclude Include="tga2d\math\vector2.h" />
+    <ClInclude Include="tga2d\math\vector2imp.h" />
+    <ClInclude Include="tga2d\math\vector4.h" />
+    <ClInclude Include="tga2d\noise\perlin_noise.h" />
+    <ClInclude Include="tga2d\primitives\custom_shape.h" />
+    <ClInclude Include="tga2d\primitives\line_primitive.h" />
+    <ClInclude Include="tga2d\render\renderer.h" />
+    <ClInclude Include="tga2d\render\render_common.h" />
+    <ClInclude Include="tga2d\render\render_object.h" />
+    <ClInclude Include="tga2d\shaders\customshader.h" />
+    <ClInclude Include="tga2d\shaders\shader.h" />
+    <ClInclude Include="tga2d\shaders\shader_common.h" />
+    <ClInclude Include="tga2d\shaders\shader_normal.h" />
+    <ClInclude Include="tga2d\shaders\shader_normal_instanced.h" />
+    <ClInclude Include="tga2d\sprite\sprite.h" />
+    <ClInclude Include="tga2d\sprite\sprite_batch.h" />
+    <ClInclude Include="tga2d\sprite\textured_quad.h" />
+    <ClInclude Include="tga2d\sprite\textured_quad_batch.h" />
+    <ClInclude Include="tga2d\StepTimer.h" />
+    <ClInclude Include="tga2d\texture\texture.h" />
+    <ClInclude Include="tga2d\texture\texture_manager.h" />
+    <ClInclude Include="tga2d\text\fontfile.h" />
+    <ClInclude Include="tga2d\text\parser.h" />
+    <ClInclude Include="tga2d\text\text.h" />
+    <ClInclude Include="tga2d\text\textfile.h" />
+    <ClInclude Include="tga2d\text\text_service.h" />
+    <ClInclude Include="tga2d\text\text_structures.h" />
+    <ClInclude Include="tga2d\text\token.h" />
+    <ClInclude Include="tga2d\tgaloader.h" />
+    <ClInclude Include="tga2d\videoplayer\video.h" />
+    <ClInclude Include="tga2d\videoplayer\videoplayer.h" />
+    <ClInclude Include="tga2d\videoplayer\video_audio.h" />
+    <ClInclude Include="tga2d\windows\windows_window.h" />
+    <ClInclude Include="xxh64_en.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectXTK\Src\DDSTextureLoader.cpp" />
+    <ClCompile Include="DirectXTK\Src\ScreenGrab.cpp" />
+    <ClCompile Include="DirectXTK\Src\WICTextureLoader.cpp" />
+    <ClCompile Include="source\animation\spineanimation.cpp" />
+    <ClCompile Include="source\animation\SpineAnimation_internal.cpp" />
+    <ClCompile Include="source\audio\audio.cpp" />
+    <ClCompile Include="source\audio\audio_out.cpp" />
+    <ClCompile Include="source\d3d\direct_3d.cpp" />
+    <ClCompile Include="source\drawers\custom_shape_drawer.cpp" />
+    <ClCompile Include="source\drawers\debug_drawer.cpp" />
+    <ClCompile Include="source\drawers\debug_performancegraph.cpp" />
+    <ClCompile Include="source\drawers\line_drawer.cpp" />
+    <ClCompile Include="source\drawers\textured_quad_batch_drawer.cpp" />
+    <ClCompile Include="source\drawers\textured_quad_drawer.cpp" />
+    <ClCompile Include="source\engine.cpp" />
+    <ClCompile Include="source\error\error_manager.cpp" />
+    <ClCompile Include="source\filewatcher\file_watcher.cpp" />
+    <ClCompile Include="source\input\XInput.cpp" />
+    <ClCompile Include="source\light\light.cpp" />
+    <ClCompile Include="source\light\light_manager.cpp" />
+    <ClCompile Include="source\math\common_math.cpp" />
+    <ClCompile Include="source\noise\perlin_noise.cpp" />
+    <ClCompile Include="source\primitives\custom_shape.cpp" />
+    <ClCompile Include="source\primitives\line_primitive.cpp" />
+    <ClCompile Include="source\render\renderer.cpp" />
+    <ClCompile Include="source\render\render_object.cpp" />
+    <ClCompile Include="source\shader\customshader.cpp" />
+    <ClCompile Include="source\shader\shader.cpp" />
+    <ClCompile Include="source\shader\shader_normal.cpp" />
+    <ClCompile Include="source\shader\shader_normal_instanced.cpp" />
+    <ClCompile Include="source\sprite\sprite.cpp" />
+    <ClCompile Include="source\sprite\sprite_batch.cpp" />
+    <ClCompile Include="source\sprite\textured_quad.cpp" />
+    <ClCompile Include="source\sprite\textured_quad_batch.cpp" />
+    <ClCompile Include="source\texture\texture.cpp" />
+    <ClCompile Include="source\texture\texture_manager.cpp" />
+    <ClCompile Include="source\text\fontfile.cpp" />
+    <ClCompile Include="source\text\parser.cpp" />
+    <ClCompile Include="source\text\text.cpp" />
+    <ClCompile Include="source\text\textfile.cpp" />
+    <ClCompile Include="source\text\text_service.cpp">
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="source\text\token.cpp" />
+    <ClCompile Include="source\tgaloader.cpp" />
+    <ClCompile Include="source\videoplayer\video.cpp" />
+    <ClCompile Include="source\videoplayer\videoplayer.cpp" />
+    <ClCompile Include="source\videoplayer\video_audio.cpp" />
+    <ClCompile Include="source\windows\windows_window.cpp" />
+    <ClCompile Include="spine\src\Animation.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\AnimationState.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\AnimationStateData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Array.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Atlas.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\AtlasAttachmentLoader.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Attachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\AttachmentLoader.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Bone.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\BoneData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\BoundingBoxAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\ClippingAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Color.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Event.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\EventData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\extension.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\IkConstraint.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\IkConstraintData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Json.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\MeshAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathConstraint.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\PathConstraintData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\PointAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\RegionAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Skeleton.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonBinary.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonBounds.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonClipping.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SkeletonJson.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Skin.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Slot.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\SlotData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\TransformConstraint.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\TransformConstraintData.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\Triangulator.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\VertexAttachment.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="spine\src\VertexEffect.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DX2DEngine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tga.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="NetMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="Sh_Character.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sh_GameWorld.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonErrorHandling.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonNetworkIncludes.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkHelpers.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sh_Object.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB3D.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\gsl.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\gsl_algorithm.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\gsl_assert.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\gsl_byte.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\gsl_util.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\multi_span.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\span.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\span_ext.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\string_span.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="gsl\pointers.h">
+      <Filter>GSL</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkUtils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.hpp">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CGrid.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkPostMaster.h">
+      <Filter>Postmaster</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkPostMasterDataStructs.h">
+      <Filter>Postmaster</Filter>
+    </ClInclude>
+    <ClInclude Include="CNetBigMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="NetMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="Sh_Character.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sh_GameWorld.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sh_Object.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkHelpers.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Socket.cpp">
+      <Filter>Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CGrid.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkPostMaster.cpp">
+      <Filter>Postmaster</Filter>
+    </ClCompile>
+    <ClCompile Include="CNetBigMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Messages">
+      <UniqueIdentifier>{b9a1092a-ce03-4383-b458-238377f64068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{a6203f14-81e4-42cc-98eb-f37d4bed4175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{2c114773-c020-4646-a2be-28d946af5b29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{1562948c-9dd6-454a-abe2-271131633b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GSL">
+      <UniqueIdentifier>{c3eac53f-918a-4051-98f2-d140dfc99ddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wrappers">
+      <UniqueIdentifier>{e2161107-d8d4-4b35-905d-e55b71272649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Postmaster">
+      <UniqueIdentifier>{9bd0a843-973b-4a9a-a2ee-3636b37b0a06}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
