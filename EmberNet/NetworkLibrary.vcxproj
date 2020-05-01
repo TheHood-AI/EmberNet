@@ -194,6 +194,7 @@
     <ClInclude Include="Packet.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Peer.h" />
+    <ClInclude Include="PeerInfo.h" />
     <ClInclude Include="PeerWrapper.h" />
     <ClInclude Include="Serializer.h" />
     <ClInclude Include="Socket.h" />

@@ -7,6 +7,7 @@
 #include "Packet.h"
 #include "SocketDescriptor.h"
 #include "NetworkDiagnostics.h"
+#include "PeerInfo.h"
 
 #define BIND(aFunction, thisPointer) std::bind(&aFunction, thisPointer, std::placeholders::_1, std::placeholders::_2)
 
@@ -48,6 +49,7 @@ namespace EmberNet {
 		void SendToAllExcept(const char* someDataToSend, const unsigned int aDataSize, SendFlags aFlag, int aPeerIDToIgnore);
 		void MapFunctionToMessage(std::function<void(char*, unsigned int)> aFunction, unsigned char aMessage) const;
 		NetworkDiagnostics GetNetworkDiagnostics()const;
+		std::vector<PeerInfo> GetConnectedPeers()const;
 	private:
 		CPeer* myPeer;
 	};

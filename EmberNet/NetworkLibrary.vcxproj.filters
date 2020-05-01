@@ -35,6 +35,7 @@
     <ClInclude Include="NetBigMessage.h">
       <Filter>Messages</Filter>
     </ClInclude>
+    <ClInclude Include="PeerInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NetworkLibrary.cpp" />

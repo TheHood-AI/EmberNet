@@ -18,7 +18,7 @@
 #include "PeerWrapper.h"
 #include "HelperMacros.h"
 #include <algorithm>
-
+#include <vector>
 namespace EmberNet
 {
 	unsigned int globalGUID = 0;
@@ -35,6 +35,8 @@ namespace EmberNet
 		}
 		myConnectedAddreses.clear();
 		myShouldShutDown = true;
+		myMutex.lock();
+		myMutex.unlock();
 	}
 
 	bool CPeer::Startup(const SocketDescriptor& aSocketDescriptor, const CreateParameters& someCreateParameters)
@@ -116,7 +118,7 @@ namespace EmberNet
 
 				Send(mySocket.GetSocket(), ch, 5, 0, p.sender);
 
-				PeerInfo& inf = myConnectedAddreses.emplace_back();
+				InternalPeerInfo& inf = myConnectedAddreses.emplace_back();
 				inf.myAddress = p.sender;
 				inf.myUID = id;
 
@@ -131,8 +133,9 @@ namespace EmberNet
 				data.push_back(p.data[4]);
 
 				DeSerializeType(myGUID, data);
-				PeerInfo& inf = myConnectedAddreses.emplace_back();
+				InternalPeerInfo& inf = myConnectedAddreses.emplace_back();
 				inf.myAddress = p.sender;
+				inf.myUID = myGUID;
 
 				break;
 			}
@@ -389,6 +392,17 @@ namespace EmberNet
 		return diag;
 	}
 
+	std::vector<PeerInfo> CPeer::GetConnectedPeers()const
+	{
+		std::vector<PeerInfo> returnVector;
+		for(auto& peer : myConnectedAddreses)
+		{
+			returnVector.emplace_back().myUID = peer.myUID;
+			returnVector.back().myAddress = peer.myAddress;
+		}
+		return returnVector;
+	}
+
 	void CPeer::ListeningThread()
 	{
 		while (!myShouldShutDown)
@@ -422,7 +436,7 @@ namespace EmberNet
 
 			for (size_t i = myConnectedAddreses.size(); i > 0; --i)
 			{
-				PeerInfo& peer = myConnectedAddreses[i - 1];
+				InternalPeerInfo& peer = myConnectedAddreses[i - 1];
 				if (peer.myPingTries > myTriesBeforeDisconnecting)
 				{
 					CDisConnectMessage disMsg;
@@ -472,7 +486,6 @@ namespace EmberNet
 	{
 		while (!myShouldShutDown)
 		{
-			std::this_thread::sleep_for(std::chrono::seconds(1));
 			myMutex.lock();
 			int i = 0;
 			for (auto& message : myGuaranteedMessages)
@@ -485,6 +498,7 @@ namespace EmberNet
 				Send(mySocket.GetSocket(), data.data(), static_cast<unsigned>(data.size()), 0, message.mySendTo);
 			}
 			myMutex.unlock();
+			std::this_thread::sleep_for(std::chrono::seconds(1));
 		}
 	}
 
