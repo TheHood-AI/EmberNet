@@ -23,7 +23,6 @@ namespace EmberNet
 
 		virtual void Serialize(std::vector<char>& someData) const = 0;
 		virtual void DeSerialize(std::vector<char>& someData) = 0;
-		virtual bool IsGuaranteed() const { return false; }
 
 		void AssignUID();
 		[[nodiscard]] unsigned short GetUID()const;

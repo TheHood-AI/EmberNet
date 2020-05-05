@@ -13,7 +13,6 @@ namespace EmberNet
 
 		void Serialize(std::vector<char>& someData) const override;
 		void DeSerialize(std::vector<char>& someData) override;
-		[[nodiscard]] bool IsGuaranteed() const override { return true; }
 
 		std::string myDataChunk;
 		mutable unsigned short myDataChunkSize = 0;

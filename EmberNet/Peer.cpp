@@ -106,17 +106,18 @@ namespace EmberNet
 			{
 			case CAST_TO_UCHAR(ENetMessageType::ConnectMsg):
 			{
-				char ch[5];
+				char ch[9];
 				ch[0] = CAST_TO_UCHAR(ENetMessageType::ConnectionConfirm);
 				std::vector<char> data;
 
 				const unsigned int id = ++globalGUID;
 
 				SerializeType(id, data);
+				SerializeType(myGUID, data);
 
-				memcpy(&ch[1], data.data(), 4);
+				memcpy(&ch[1], data.data(), 8);
 
-				Send(mySocket.GetSocket(), ch, 5, 0, p.sender);
+				Send(mySocket.GetSocket(), ch, 9, 0, p.sender);
 
 				InternalPeerInfo& inf = myConnectedAddreses.emplace_back();
 				inf.myAddress = p.sender;
@@ -131,11 +132,18 @@ namespace EmberNet
 				data.push_back(p.data[2]);
 				data.push_back(p.data[3]);
 				data.push_back(p.data[4]);
+				
+				data.push_back(p.data[5]);
+				data.push_back(p.data[6]);
+				data.push_back(p.data[7]);
+				data.push_back(p.data[8]);
 
+				int otherID = 0;
+				DeSerializeType(otherID, data);
 				DeSerializeType(myGUID, data);
 				InternalPeerInfo& inf = myConnectedAddreses.emplace_back();
 				inf.myAddress = p.sender;
-				inf.myUID = myGUID;
+				inf.myUID = otherID;
 
 				break;
 			}
